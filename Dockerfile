@@ -6,16 +6,17 @@ ENV LUAROCKS_VERSION=3.0.4
 RUN set -ex \
     \
     && apk add --no-cache \
-        curl \
+        ca-certificates \
         git \
+        openssh-server \
         openssl \
-        unzip \
     \
     && apk add --no-cache --virtual .build-deps \
-        ca-certificates \
+        curl \
         make \
         gcc \
         libc-dev \
+        unzip \
     \
     && wget -c https://www.lua.org/ftp/lua-${LUA_VERSION}.tar.gz \
         -O - | tar -xzf - \

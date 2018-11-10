@@ -10,19 +10,21 @@ RUN set -ex \
         git \
         openssh-server \
         openssl \
+        readline \
     \
     && apk add --no-cache --virtual .build-deps \
         curl \
         make \
         gcc \
         libc-dev \
+        readline-dev \
         unzip \
     \
     && wget -c https://www.lua.org/ftp/lua-${LUA_VERSION}.tar.gz \
         -O - | tar -xzf - \
     \
     && cd lua-${LUA_VERSION} \
-    && make -j"$(nproc)" posix \
+    && make -j"$(nproc)" linux \
     && make install \
     && cd .. \
     && rm -rf lua-${LUA_VERSION} \

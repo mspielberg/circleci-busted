@@ -8,15 +8,15 @@ RUN set -ex \
     && apk add --no-cache \
         ca-certificates \
         git \
-        openssh-server \
-        openssl \
+        dropbear-ssh \
         readline \
     \
     && apk add --no-cache --virtual .build-deps \
         curl \
-        make \
         gcc \
         libc-dev \
+        make \
+        openssl \
         readline-dev \
         unzip \
     \

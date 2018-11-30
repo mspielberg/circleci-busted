@@ -39,6 +39,7 @@ RUN set -ex \
     && rm -rf luarocks-${LUAROCKS_VERSION} \
     \
     && luarocks install busted \
+    && luarocks install inspect \
     && luarocks install serpent \
     \
     && apk del .build-deps

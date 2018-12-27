@@ -40,6 +40,7 @@ RUN set -ex \
     \
     && luarocks install busted \
     && luarocks install inspect \
+    && luarocks install luacheck \
     && luarocks install serpent \
     \
     && apk del .build-deps
